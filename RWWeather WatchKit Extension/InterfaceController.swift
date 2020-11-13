@@ -33,6 +33,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var shortTermForecastLabel1: WKInterfaceLabel!
     @IBOutlet var shortTermForecastLabel2: WKInterfaceLabel!
     @IBOutlet var shortTermForecastLabel3: WKInterfaceLabel!
+    @IBOutlet var longTermForecastTable: WKInterfaceTable!
     
     var dataSource = WeatherDataSource(measurementSystem: .Metric)
     
@@ -40,6 +41,7 @@ class InterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         updateCurrentForecast()
         updateShortTermForecast()
+        updateLongTermForecast()
     }
     
     func updateCurrentForecast() {
@@ -63,6 +65,10 @@ class InterfaceController: WKInterfaceController {
             label?.setText("\(weather.intervalString)\n" +
             "\(weather.temperatureString)")
         }
+    }
+    
+    func updateLongTermForecast(){
+        longTermForecastTable.setNumberOfRows(dataSource.longTermWeather.count, withRowType: "longTermForecastRow")
     }
 
   override func willActivate() {

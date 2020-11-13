@@ -79,11 +79,40 @@
                         <separator alignment="left" id="j2K-3I-a0c">
                             <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </separator>
+                        <table alignment="left" id="few-8w-hch">
+                            <items>
+                                <tableRow identifier="longTermForecastRow" id="f0g-Xs-MgZ">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="E3l-Ln-Trl">
+                                        <items>
+                                            <group width="1" widthAdjustment="-31" alignment="left" layout="vertical" spacing="2" id="AiZ-2H-w9b">
+                                                <items>
+                                                    <group width="1" alignment="left" id="E7p-Sw-kpl">
+                                                        <items>
+                                                            <label alignment="left" text="Mon" id="108-eX-2cJ">
+                                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                            </label>
+                                                            <label alignment="right" text="70°" id="nu5-u5-aG5">
+                                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <label alignment="left" text="Sunny" id="FNx-C3-Gy2">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                            <imageView alignment="right" verticalAlignment="center" image="Sunny" id="GMT-uA-cLD"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
                     </items>
                     <connections>
                         <outlet property="conditionsImage" destination="tRm-s7-yEi" id="bYg-oL-SDi"/>
                         <outlet property="conditionsLabel" destination="QVW-mU-OEC" id="jCc-hd-GrD"/>
                         <outlet property="feelsLikeLabel" destination="VQL-O2-pxY" id="6tY-zt-1Be"/>
+                        <outlet property="longTermForecastTable" destination="few-8w-hch" id="bTE-JO-vg4"/>
                         <outlet property="shortTermForecastLabel1" destination="C3r-5V-3jm" id="m3B-QS-9jn"/>
                         <outlet property="shortTermForecastLabel2" destination="zfG-Ed-QpP" id="nDe-A8-vfO"/>
                         <outlet property="shortTermForecastLabel3" destination="4dp-9b-rOW" id="NhM-y5-Jhm"/>
@@ -97,5 +126,6 @@
     </scenes>
     <resources>
         <image name="Cloudy" width="26" height="26"/>
+        <image name="Sunny" width="26" height="26"/>
     </resources>
 </document>
