@@ -45,47 +45,132 @@
                                 <separator alignment="left" id="U6f-Qz-lM7">
                                     <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </separator>
-                                <group width="1" alignment="left" id="whx-f9-u1Q">
+                                <group width="1" alignment="left" id="Cvp-z6-pev">
                                     <items>
-                                        <button alignment="left" id="hpe-hq-zbB">
-                                            <group key="contentGroup" width="0.33300000000000002" alignment="left" id="X9s-2W-bac">
-                                                <items>
-                                                    <label alignment="center" textAlignment="center" numberOfLines="2" id="C3r-5V-3jm">
-                                                        <string key="text">1PM
-70°</string>
-                                                    </label>
-                                                </items>
-                                            </group>
-                                            <connections>
-                                                <action selector="shortTermWeather1" destination="AgC-eL-Hgc" id="0BE-AS-hZg"/>
-                                            </connections>
-                                        </button>
-                                        <button alignment="left" id="dSR-09-XUY">
-                                            <group key="contentGroup" width="0.33300000000000002" alignment="left" id="MHY-eA-gGC">
-                                                <items>
-                                                    <label alignment="center" textAlignment="center" numberOfLines="2" id="zfG-Ed-QpP">
-                                                        <string key="text">1PM
-70°</string>
-                                                    </label>
-                                                </items>
-                                            </group>
-                                            <connections>
-                                                <action selector="shortTermWeather2" destination="AgC-eL-Hgc" id="4OD-CZ-zQj"/>
-                                            </connections>
-                                        </button>
-                                        <button alignment="left" id="o3N-cp-Lcz">
-                                            <group key="contentGroup" width="0.33300000000000002" alignment="left" id="OhJ-IK-NVU">
-                                                <items>
-                                                    <label alignment="center" textAlignment="center" numberOfLines="2" id="4dp-9b-rOW">
-                                                        <string key="text">1PM
-70°</string>
-                                                    </label>
-                                                </items>
-                                            </group>
-                                            <connections>
-                                                <action selector="shortTermWeather3" destination="AgC-eL-Hgc" id="cdU-5M-MSX"/>
-                                            </connections>
-                                        </button>
+                                        <group width="1" height="44" alignment="left" id="paJ-1b-uUt" userLabel="Short Term Forecast Group1">
+                                            <items>
+                                                <button alignment="left" id="O4A-i1-xId">
+                                                    <group key="contentGroup" width="0.27000000000000002" height="1" alignment="left" id="TZh-D3-g1W">
+                                                        <items>
+                                                            <label alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="2" id="BjL-yr-51m">
+                                                                <string key="text">1PM
+24°</string>
+                                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <connections>
+                                                        <action selector="shortTermWeather1" destination="AgC-eL-Hgc" id="ZwC-AX-h9y"/>
+                                                    </connections>
+                                                </button>
+                                                <button alignment="left" id="rxc-Ds-AsZ">
+                                                    <group key="contentGroup" width="0.27000000000000002" height="1" alignment="left" id="hmh-Tt-iSl">
+                                                        <items>
+                                                            <label alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="2" id="1nW-tG-eff">
+                                                                <string key="text">2PM
+24°</string>
+                                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <connections>
+                                                        <action selector="shortTermWeather2" destination="AgC-eL-Hgc" id="8jY-Tg-D0o"/>
+                                                    </connections>
+                                                </button>
+                                                <button alignment="left" id="yJn-Vy-ILU">
+                                                    <group key="contentGroup" width="0.27000000000000002" height="1" alignment="left" id="gXK-kY-fG4">
+                                                        <items>
+                                                            <label alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="2" id="Ho3-P7-fc4">
+                                                                <string key="text">3PM
+24°</string>
+                                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <connections>
+                                                        <action selector="shortTermWeather3" destination="AgC-eL-Hgc" id="RBH-Yy-DLW"/>
+                                                    </connections>
+                                                </button>
+                                                <button alignment="left" id="HEW-dJ-ixY">
+                                                    <group key="contentGroup" width="0.19" height="1" alignment="left" id="BOK-ld-Ers">
+                                                        <items>
+                                                            <group width="0.75" alignment="center" verticalAlignment="center" radius="9" id="7FT-b6-2fg">
+                                                                <items>
+                                                                    <label alignment="center" verticalAlignment="center" text="&gt;" textAlignment="center" id="1yD-Kq-iWq">
+                                                                        <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                                                    </label>
+                                                                </items>
+                                                                <color key="backgroundColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </group>
+                                                        </items>
+                                                    </group>
+                                                    <connections>
+                                                        <action selector="showSecondPage" destination="AgC-eL-Hgc" id="gia-J7-C52"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
+                                        <group width="1" height="44" alignment="left" id="4sV-6h-NuV" userLabel="Short Term Forecast Group2">
+                                            <items>
+                                                <button alignment="left" id="MzR-AD-3j8">
+                                                    <group key="contentGroup" width="0.19" height="1" alignment="left" id="HDM-WH-Lni">
+                                                        <items>
+                                                            <group width="0.75" alignment="center" verticalAlignment="center" radius="9" id="z6R-LK-k7P">
+                                                                <items>
+                                                                    <label alignment="center" verticalAlignment="center" text="&lt;" id="5Fz-Jf-W4X"/>
+                                                                </items>
+                                                                <color key="backgroundColor" red="0.33333334329999997" green="0.33333334329999997" blue="0.33333334329999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </group>
+                                                        </items>
+                                                    </group>
+                                                    <connections>
+                                                        <action selector="showFirstPage" destination="AgC-eL-Hgc" id="HM6-Xd-Ax7"/>
+                                                    </connections>
+                                                </button>
+                                                <button alignment="left" id="2SJ-sq-zpA">
+                                                    <group key="contentGroup" width="0.27000000000000002" height="1" alignment="left" id="6mZ-Nl-ACE">
+                                                        <items>
+                                                            <label alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="2" id="Xjv-xv-r50">
+                                                                <string key="text">4PM
+24°</string>
+                                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <connections>
+                                                        <action selector="shortTermWeather1" destination="AgC-eL-Hgc" id="20X-VE-mcc"/>
+                                                    </connections>
+                                                </button>
+                                                <button alignment="left" id="hOo-8r-fKf">
+                                                    <group key="contentGroup" width="0.27000000000000002" height="1" alignment="left" id="aLR-V6-4OR">
+                                                        <items>
+                                                            <label alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="2" id="vMa-oL-hO3">
+                                                                <string key="text">5PM
+24°</string>
+                                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <connections>
+                                                        <action selector="shortTermWeather2" destination="AgC-eL-Hgc" id="tCY-Iv-r5p"/>
+                                                    </connections>
+                                                </button>
+                                                <button alignment="left" id="50V-dC-JB4">
+                                                    <group key="contentGroup" width="0.27000000000000002" height="1" alignment="left" id="mym-rR-KZ2">
+                                                        <items>
+                                                            <label alignment="center" verticalAlignment="center" textAlignment="center" numberOfLines="2" id="i9p-94-BBm">
+                                                                <string key="text">6PM
+24°</string>
+                                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                            </label>
+                                                        </items>
+                                                    </group>
+                                                    <connections>
+                                                        <action selector="shortTermWeather3" destination="AgC-eL-Hgc" id="T3e-jS-F3u"/>
+                                                    </connections>
+                                                </button>
+                                            </items>
+                                        </group>
                                     </items>
                                 </group>
                                 <separator alignment="left" id="j2K-3I-a0c">
@@ -150,10 +235,14 @@
                         <outlet property="feelsLikeLabel" destination="VQL-O2-pxY" id="6tY-zt-1Be"/>
                         <outlet property="loadingImage" destination="vkC-LJ-xea" id="YOZ-Ko-lcK"/>
                         <outlet property="longTermForecastTable" destination="few-8w-hch" id="bTE-JO-vg4"/>
-                        <outlet property="shortTermForecastGroup" destination="whx-f9-u1Q" id="2vu-Kd-lNx"/>
-                        <outlet property="shortTermForecastLabel1" destination="C3r-5V-3jm" id="m3B-QS-9jn"/>
-                        <outlet property="shortTermForecastLabel2" destination="zfG-Ed-QpP" id="nDe-A8-vfO"/>
-                        <outlet property="shortTermForecastLabel3" destination="4dp-9b-rOW" id="NhM-y5-Jhm"/>
+                        <outlet property="shortTermForecastGroup1" destination="paJ-1b-uUt" id="hga-eO-WcY"/>
+                        <outlet property="shortTermForecastGroup2" destination="4sV-6h-NuV" id="jU4-R1-Zl1"/>
+                        <outlet property="shortTermForecastLabel1" destination="BjL-yr-51m" id="UMr-Rp-bXg"/>
+                        <outlet property="shortTermForecastLabel2" destination="1nW-tG-eff" id="D99-BT-hZj"/>
+                        <outlet property="shortTermForecastLabel3" destination="Ho3-P7-fc4" id="bdm-yx-kM5"/>
+                        <outlet property="shortTermForecastLabel4" destination="Xjv-xv-r50" id="PRI-MY-emc"/>
+                        <outlet property="shortTermForecastLabel5" destination="vMa-oL-hO3" id="L3f-tm-vOm"/>
+                        <outlet property="shortTermForecastLabel6" destination="i9p-94-BBm" id="xRK-ZB-R2W"/>
                         <outlet property="temperatureLabel" destination="RaI-MH-eRu" id="B6T-bt-ZQ8"/>
                         <outlet property="windSpeedLabel" destination="x6g-dZ-FDX" id="uso-UL-RBL"/>
                     </connections>
@@ -225,6 +314,25 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="403" y="110"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="PxV-Ya-yKV">
+            <objects>
+                <notificationController id="isz-T1-qOe">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="gg0-p4-ll5">
+                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                        </label>
+                    </items>
+                    <notificationCategory key="notificationCategory" id="0jq-SS-DZx">
+                        <color key="sashColor" red="0.88864511986301364" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    </notificationCategory>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="gg0-p4-ll5" id="eLL-hf-cWA"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="403" y="421"/>
         </scene>
     </scenes>
     <resources>

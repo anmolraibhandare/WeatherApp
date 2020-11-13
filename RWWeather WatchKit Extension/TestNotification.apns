@@ -1,0 +1,8 @@
+{
+    "aps:": {
+        "alert": {
+            "title": "Emergency alert",
+            "body": "Zombie apocalypse warning!"
+        }
+    }
+}

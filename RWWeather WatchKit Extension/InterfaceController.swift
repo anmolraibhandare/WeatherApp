@@ -30,11 +30,20 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var temperatureLabel: WKInterfaceLabel!
     @IBOutlet var feelsLikeLabel: WKInterfaceLabel!
     @IBOutlet var conditionsLabel: WKInterfaceLabel!
+    
+    @IBOutlet var shortTermForecastGroup1: WKInterfaceGroup!
+    @IBOutlet var shortTermForecastGroup2: WKInterfaceGroup!
+    
     @IBOutlet var shortTermForecastLabel1: WKInterfaceLabel!
     @IBOutlet var shortTermForecastLabel2: WKInterfaceLabel!
     @IBOutlet var shortTermForecastLabel3: WKInterfaceLabel!
+    @IBOutlet var shortTermForecastLabel4: WKInterfaceLabel!
+    @IBOutlet var shortTermForecastLabel5: WKInterfaceLabel!
+    @IBOutlet var shortTermForecastLabel6: WKInterfaceLabel!
+
+    
     @IBOutlet var longTermForecastTable: WKInterfaceTable!
-    @IBOutlet var shortTermForecastGroup: WKInterfaceGroup!
+
     @IBOutlet var loadingImage: WKInterfaceImage!
     @IBOutlet var containerGroup: WKInterfaceGroup!
     
@@ -91,7 +100,7 @@ class InterfaceController: WKInterfaceController {
         
         // draw in context
         let path = UIBezierPath()
-        path.lineWidth = 4
+        path.lineWidth = 1
         UIColor.green.withAlphaComponent(0.9).setStroke()
 
         // real line graph code starts here
@@ -121,7 +130,25 @@ class InterfaceController: WKInterfaceController {
         // end drawing code
         if let cgImage = context?.makeImage() {
             let uiImage = UIImage(cgImage: cgImage)
-          shortTermForecastGroup.setBackgroundImage(uiImage)
+          shortTermForecastGroup1.setBackgroundImage(uiImage)
+            shortTermForecastGroup2.setBackgroundImage(uiImage)
+        }
+    }
+    
+    
+    @IBAction func showSecondPage() {
+        animate(withDuration: 0.5) {
+            self.shortTermForecastGroup1.setRelativeWidth(0,
+            withAdjustment: 0)
+            self.shortTermForecastGroup1.setAlpha(0)
+        }
+    }
+
+    @IBAction func showFirstPage() {
+        animate(withDuration: 0.5) {
+            self.shortTermForecastGroup1.setRelativeWidth(1,
+            withAdjustment: 0)
+            self.shortTermForecastGroup1.setAlpha(1)
         }
     }
     
@@ -138,7 +165,7 @@ class InterfaceController: WKInterfaceController {
     // Updating the short term forecast
     func updateShortTermForecast() {
         let labels = [shortTermForecastLabel1, shortTermForecastLabel2,
-        shortTermForecastLabel3]
+        shortTermForecastLabel3, shortTermForecastLabel4, shortTermForecastLabel5, shortTermForecastLabel6]
         let weatherData = [dataSource.shortTermWeather[0],
         dataSource.shortTermWeather[dataSource.shortTermWeather.count/2],
         dataSource.shortTermWeather[dataSource.shortTermWeather.count-1]]
@@ -148,6 +175,7 @@ class InterfaceController: WKInterfaceController {
             label?.setText("\(weather.intervalString)\n" +
             "\(weather.temperatureString)")
         }
+
     }
     
     // Updating the long term table forecast
