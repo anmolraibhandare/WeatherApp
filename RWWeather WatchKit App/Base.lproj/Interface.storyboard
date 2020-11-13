@@ -86,7 +86,7 @@
                                         <items>
                                             <group width="1" widthAdjustment="-31" alignment="left" layout="vertical" spacing="2" id="AiZ-2H-w9b">
                                                 <items>
-                                                    <group width="1" alignment="left" id="E7p-Sw-kpl">
+                                                    <group width="1" widthAdjustment="-12" alignment="left" id="E7p-Sw-kpl">
                                                         <items>
                                                             <label alignment="left" text="Mon" id="108-eX-2cJ">
                                                                 <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
@@ -95,6 +95,7 @@
                                                                 <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                                                             </label>
                                                         </items>
+                                                        <variation key="device=watch44mm" widthAdjustment="-20"/>
                                                     </group>
                                                     <label alignment="left" text="Sunny" id="FNx-C3-Gy2">
                                                         <fontDescription key="font" style="UICTFontTextStyleCaption1"/>

@@ -72,7 +72,11 @@ class InterfaceController: WKInterfaceController {
         
         for (index, weather) in dataSource.longTermWeather.enumerated(){
             if let row = longTermForecastTable.rowController(at: index) as? LongTermForecastRowController {
-                row.conditionsLabel.setText("")
+                row.dateLabel.setText(weather.intervalString)
+                row.temperatureLabel.setText(weather.temperatureString)
+                row.conditionsLabel.setText(weather.weatherConditionString)
+                row.conditionsImage.setImageNamed(
+                weather.weatherConditionImageName)
             }
         }
     }
