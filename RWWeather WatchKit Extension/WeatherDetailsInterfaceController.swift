@@ -24,6 +24,9 @@ class WeatherDetailsInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
+        // Set Title
+        intervalLabel.setHidden(true)
+        
         // Receive Context
         // Checking the context if received from InterfaceController
         guard let context = context as? NSDictionary, let dataSource = context["dataSource"] as? WeatherDataSource else {
@@ -34,6 +37,14 @@ class WeatherDetailsInterfaceController: WKInterfaceController {
             let weather = dataSource.longTermWeather[index]
             // Set up inteface
             setTitle(weather.intervalString)
+            
+            temperatureLabel.setText(weather.temperatureString)
+            conditionLabel.setText(weather.weatherConditionString)
+            conditionImage.setImageNamed(weather.weatherConditionImageName)
+            feelsLikeLabel.setText(weather.feelTemperatureString)
+            windLabel.setText(weather.windString)
+            highTemperatureLabel.setText(weather.highTemperatureString)
+            lowTemperatureLabel.setText(weather.lowTemperatureString)
         }
     }
 

@@ -110,7 +110,6 @@
                                         <outlet property="conditionsLabel" destination="FNx-C3-Gy2" id="6bF-f1-OBb"/>
                                         <outlet property="dateLabel" destination="108-eX-2cJ" id="e5L-25-n1z"/>
                                         <outlet property="temperatureLabel" destination="nu5-u5-aG5" id="X66-8h-k5i"/>
-                                        <segue destination="XqW-Qn-g2K" kind="push" identifier="WeatherDetailsSegue" id="1ub-qs-9Vq"/>
                                     </connections>
                                 </tableRow>
                             </items>

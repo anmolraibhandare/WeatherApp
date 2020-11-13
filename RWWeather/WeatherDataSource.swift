@@ -114,6 +114,12 @@ public struct WeatherData {
   var temperatureString: String {
     return "\(temperature)°"
   }
+    var highTemperatureString: String {
+      return "\(highTemperature)°"
+    }
+    var lowTemperatureString: String {
+      return "\(lowTemperature)°"
+    }
   var feelTemperatureString: String {
     return "Feels like \(feelTemperature)°"
   }
@@ -156,20 +162,20 @@ public class WeatherDataSource {
 
     shortTermWeather = [
         WeatherData(measurementSystem: measurementSystem, interval: .Hour(time: NSDate().dateByAddingsHours(hours: 1)), temperature: 16, feelTemperature: 15, highTemperature: 16, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Cloudy),
-        WeatherData(measurementSystem: measurementSystem, interval: .Hour(time: NSDate().dateByAddingsHours(hours: 2)), temperature: 19, feelTemperature: 15, highTemperature: 16, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Cloudy),
-        WeatherData(measurementSystem: measurementSystem, interval: .Hour(time: NSDate().dateByAddingsHours(hours: 3)), temperature: 21, feelTemperature: 15, highTemperature: 16, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Rain),
-        WeatherData(measurementSystem: measurementSystem, interval: .Hour(time: NSDate().dateByAddingsHours(hours: 4)), temperature: 22, feelTemperature: 15, highTemperature: 16, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Cloudy),
-        WeatherData(measurementSystem: measurementSystem, interval: .Hour(time: NSDate().dateByAddingsHours(hours: 5)), temperature: 20, feelTemperature: 15, highTemperature: 16, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Snow),
-        WeatherData(measurementSystem: measurementSystem, interval: .Hour(time: NSDate().dateByAddingsHours(hours: 6)), temperature: 21, feelTemperature: 15, highTemperature: 16, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Snow),
+        WeatherData(measurementSystem: measurementSystem, interval: .Hour(time: NSDate().dateByAddingsHours(hours: 2)), temperature: 19, feelTemperature: 16, highTemperature: 17, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Cloudy),
+        WeatherData(measurementSystem: measurementSystem, interval: .Hour(time: NSDate().dateByAddingsHours(hours: 3)), temperature: 21, feelTemperature: 17, highTemperature: 18, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Rain),
+        WeatherData(measurementSystem: measurementSystem, interval: .Hour(time: NSDate().dateByAddingsHours(hours: 4)), temperature: 22, feelTemperature: 18, highTemperature: 19, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Cloudy),
+        WeatherData(measurementSystem: measurementSystem, interval: .Hour(time: NSDate().dateByAddingsHours(hours: 5)), temperature: 20, feelTemperature: 19, highTemperature: 20, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Snow),
+        WeatherData(measurementSystem: measurementSystem, interval: .Hour(time: NSDate().dateByAddingsHours(hours: 6)), temperature: 21, feelTemperature: 20, highTemperature: 25, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Snow),
         WeatherData(measurementSystem: measurementSystem, interval: .Hour(time: NSDate().dateByAddingsHours(hours: 7)), temperature: 18, feelTemperature: 15, highTemperature: 16, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Snow)
     ]
 
     longTermWeather = [
         WeatherData(measurementSystem: measurementSystem, interval: .Day(day: NSDate().dateByAddingsDays(days: 1)), temperature: 16, feelTemperature: 15, highTemperature: 16, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Cloudy),
-        WeatherData(measurementSystem: measurementSystem, interval: .Day(day: NSDate().dateByAddingsDays(days: 2)), temperature: 16, feelTemperature: 15, highTemperature: 16, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Rain),
-        WeatherData(measurementSystem: measurementSystem, interval: .Day(day: NSDate().dateByAddingsDays(days: 3)), temperature: 16, feelTemperature: 15, highTemperature: 16, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Sunny),
-        WeatherData(measurementSystem: measurementSystem, interval: .Day(day: NSDate().dateByAddingsDays(days: 4)), temperature: 16, feelTemperature: 15, highTemperature: 16, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Sunny),
-        WeatherData(measurementSystem: measurementSystem, interval: .Day(day: NSDate().dateByAddingsDays(days: 5)), temperature: 16, feelTemperature: 15, highTemperature: 16, lowTemperature: 16, windSpeed: 8, windDirection: "NE", weatherCondition: .Snow)
+        WeatherData(measurementSystem: measurementSystem, interval: .Day(day: NSDate().dateByAddingsDays(days: 2)), temperature: 16, feelTemperature: 15, highTemperature: 17, lowTemperature: 15, windSpeed: 8, windDirection: "NE", weatherCondition: .Rain),
+        WeatherData(measurementSystem: measurementSystem, interval: .Day(day: NSDate().dateByAddingsDays(days: 3)), temperature: 16, feelTemperature: 15, highTemperature: 18, lowTemperature: 13, windSpeed: 8, windDirection: "NE", weatherCondition: .Sunny),
+        WeatherData(measurementSystem: measurementSystem, interval: .Day(day: NSDate().dateByAddingsDays(days: 4)), temperature: 16, feelTemperature: 15, highTemperature: 19, lowTemperature: 11, windSpeed: 8, windDirection: "NE", weatherCondition: .Sunny),
+        WeatherData(measurementSystem: measurementSystem, interval: .Day(day: NSDate().dateByAddingsDays(days: 5)), temperature: 16, feelTemperature: 15, highTemperature: 16, lowTemperature: 15, windSpeed: 8, windDirection: "NE", weatherCondition: .Snow)
     ]
   }
 }

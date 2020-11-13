@@ -110,7 +110,14 @@ class InterfaceController: WKInterfaceController {
         return nil
     }
     
-    
+    // Push Segues from code
+    override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
+        let context: NSDictionary = [
+            "dataSource": dataSource,
+            "longTermForecastIndex": rowIndex
+        ]
+        pushController(withName: "WeatherDetailsInterface", context: context)
+    }
     
     // Metric Menu Action
     @IBAction func switchToMetric() {
