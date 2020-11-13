@@ -117,8 +117,16 @@
                     </items>
                     <menu key="menu" id="mAq-7Y-Qqj">
                         <items>
-                            <menuItem title="Metric" image="units-metric" id="t6D-3j-P9U"/>
-                            <menuItem title="US Customary" image="units-uscustomary" id="iBg-aO-XyW"/>
+                            <menuItem title="Metric" image="units-metric" id="t6D-3j-P9U">
+                                <connections>
+                                    <action selector="switchToMetric" destination="AgC-eL-Hgc" id="aZO-uU-n64"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="US Customary" image="units-uscustomary" id="iBg-aO-XyW">
+                                <connections>
+                                    <action selector="switchToUSCustomary" destination="AgC-eL-Hgc" id="LiC-Be-dJw"/>
+                                </connections>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>

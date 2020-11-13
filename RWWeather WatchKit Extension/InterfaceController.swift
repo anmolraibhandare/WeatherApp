@@ -39,6 +39,10 @@ class InterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        updatAllForecast()
+    }
+    
+    func updatAllForecasts() {
         updateCurrentForecast()
         updateShortTermForecast()
         updateLongTermForecast()
@@ -80,8 +84,17 @@ class InterfaceController: WKInterfaceController {
             }
         }
     }
-
-  override func willActivate() {
+    @IBAction func switchToMetric() {
+        dataSource = WeatherDataSource(measurementSystem: .Metric)
+        updatAllForecasts()
+    }
+    
+    @IBAction func switchToUSCustomary() {
+        dataSource = WeatherDataSource(measurementSystem: .USCustomary)
+        updatAllForecasts()
+    }
+    
+    override func willActivate() {
     // This method is called when watch view controller is about to be visible to user
     super.willActivate()
   }
