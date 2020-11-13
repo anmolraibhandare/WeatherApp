@@ -35,6 +35,8 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var shortTermForecastLabel3: WKInterfaceLabel!
     @IBOutlet var longTermForecastTable: WKInterfaceTable!
     @IBOutlet var shortTermForecastGroup: WKInterfaceGroup!
+    @IBOutlet var loadingImage: WKInterfaceImage!
+    @IBOutlet var containerGroup: WKInterfaceGroup!
     
     lazy var dataSource: WeatherDataSource = {
         let defaultSystem = UserDefaults.standard.string(forKey: "MeasurementSystem") ?? "Metric"
@@ -46,8 +48,17 @@ class InterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        updatAllForecasts()
-        drawShortTermForecastGraph()
+        loadingImage.startAnimating()
+        containerGroup.setHidden(true)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
+            self.animate(withDuration: 0.5) {
+                self.containerGroup.setHidden(false)
+                self.loadingImage.setAlpha(0)
+                self.loadingImage.setHeight(0)
+                self.updatAllForecasts()
+            }
+        }
     }
     
     // Helper function to update all forecasts
@@ -55,6 +66,7 @@ class InterfaceController: WKInterfaceController {
         updateCurrentForecast()
         updateShortTermForecast()
         updateLongTermForecast()
+        drawShortTermForecastGraph()
     }
     
     // Helper function to draw forecast graph
