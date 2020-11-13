@@ -110,6 +110,7 @@
                                         <outlet property="conditionsLabel" destination="FNx-C3-Gy2" id="6bF-f1-OBb"/>
                                         <outlet property="dateLabel" destination="108-eX-2cJ" id="e5L-25-n1z"/>
                                         <outlet property="temperatureLabel" destination="nu5-u5-aG5" id="X66-8h-k5i"/>
+                                        <segue destination="XqW-Qn-g2K" kind="push" identifier="WeatherDetailsSegue" id="1ub-qs-9Vq"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -143,6 +144,71 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="118" y="109"/>
+        </scene>
+        <!--WeatherDetailsInterface-->
+        <scene sceneID="3wp-IN-Wrw">
+            <objects>
+                <controller identifier="WeatherDetailsInterface" id="XqW-Qn-g2K" customClass="WeatherDetailsInterfaceController" customModule="RWWeather_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Date/Time" id="nUP-HD-XSc"/>
+                        <group width="1" alignment="left" spacing="6" id="RzE-By-3E9">
+                            <items>
+                                <label alignment="center" verticalAlignment="center" text="70°" id="JhI-HW-N9b">
+                                    <fontDescription key="font" type="system" weight="medium" pointSize="34"/>
+                                    <variation key="device=watch38mm">
+                                        <fontDescription key="font" type="system" pointSize="28"/>
+                                    </variation>
+                                </label>
+                                <imageView alignment="center" verticalAlignment="center" image="Cloudy" id="3jg-uW-AqV"/>
+                            </items>
+                            <variation key="device=watch42mm" spacing="10"/>
+                        </group>
+                        <label alignment="center" text="Cloudy" id="4y4-ZQ-JpM"/>
+                        <label alignment="center" text="Feels like 72°" id="xao-9n-nfr">
+                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                        </label>
+                        <label alignment="center" text="2MPH NE" id="LTt-dm-18D">
+                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                        </label>
+                        <separator alignment="left" id="dy4-vF-wuc"/>
+                        <group width="1" alignment="left" id="oyI-sK-EwM">
+                            <items>
+                                <group width="0.5" widthAdjustment="-4" alignment="left" layout="vertical" id="dwx-bR-eBI">
+                                    <items>
+                                        <label alignment="right" text="High" id="ac1-gl-XEY">
+                                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                        </label>
+                                        <label alignment="right" text="Low" id="QeD-gr-fOh">
+                                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                        </label>
+                                    </items>
+                                </group>
+                                <group width="0.5" widthAdjustment="-4" alignment="right" layout="vertical" id="87D-md-6s7">
+                                    <items>
+                                        <label alignment="left" text="123°" id="WLn-ma-RkC">
+                                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                        </label>
+                                        <label alignment="left" text="123°" id="EtE-NS-piD">
+                                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                        </label>
+                                    </items>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="conditionImage" destination="3jg-uW-AqV" id="XWX-84-Kga"/>
+                        <outlet property="conditionLabel" destination="4y4-ZQ-JpM" id="pBK-0Q-equ"/>
+                        <outlet property="feelsLikeLabel" destination="xao-9n-nfr" id="TKp-lC-a7V"/>
+                        <outlet property="highTemperatureLabel" destination="WLn-ma-RkC" id="S58-Bj-Of1"/>
+                        <outlet property="intervalLabel" destination="nUP-HD-XSc" id="SNz-Qz-NXP"/>
+                        <outlet property="lowTemperatureLabel" destination="EtE-NS-piD" id="qpA-YA-S0c"/>
+                        <outlet property="temperatureLabel" destination="JhI-HW-N9b" id="tOd-jZ-rDi"/>
+                        <outlet property="windLabel" destination="LTt-dm-18D" id="dfZ-BT-Qda"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="403" y="110"/>
         </scene>
     </scenes>
     <resources>

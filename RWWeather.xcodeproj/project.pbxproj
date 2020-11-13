@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		260BA5EA255ED8D500C75691 /* LongTermForecastRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260BA5E9255ED8D500C75691 /* LongTermForecastRowController.swift */; };
+		260BA5EC255EE1B200C75691 /* WeatherDetailsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260BA5EB255EE1B200C75691 /* WeatherDetailsInterfaceController.swift */; };
 		784314C01C1DE25200F006A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784314BF1C1DE25200F006A0 /* AppDelegate.swift */; };
 		784314C21C1DE25200F006A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784314C11C1DE25200F006A0 /* ViewController.swift */; };
 		784314C51C1DE25200F006A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 784314C31C1DE25200F006A0 /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 
 /* Begin PBXFileReference section */
 		260BA5E9255ED8D500C75691 /* LongTermForecastRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTermForecastRowController.swift; sourceTree = "<group>"; };
+		260BA5EB255EE1B200C75691 /* WeatherDetailsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsInterfaceController.swift; sourceTree = "<group>"; };
 		784314BC1C1DE25200F006A0 /* RWWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RWWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		784314BF1C1DE25200F006A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		784314C11C1DE25200F006A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				784314E21C1DE25200F006A0 /* InterfaceController.swift */,
+				260BA5EB255EE1B200C75691 /* WeatherDetailsInterfaceController.swift */,
 				260BA5E9255ED8D500C75691 /* LongTermForecastRowController.swift */,
 				784314E41C1DE25200F006A0 /* ExtensionDelegate.swift */,
 				784314E61C1DE25200F006A0 /* Assets.xcassets */,
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				784314E51C1DE25200F006A0 /* ExtensionDelegate.swift in Sources */,
+				260BA5EC255EE1B200C75691 /* WeatherDetailsInterfaceController.swift in Sources */,
 				260BA5EA255ED8D500C75691 /* LongTermForecastRowController.swift in Sources */,
 				784314E31C1DE25200F006A0 /* InterfaceController.swift in Sources */,
 				784314F81C1DE40700F006A0 /* WeatherDataSource.swift in Sources */,
