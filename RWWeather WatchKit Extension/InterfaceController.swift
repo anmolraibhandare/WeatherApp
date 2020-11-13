@@ -34,6 +34,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var shortTermForecastLabel2: WKInterfaceLabel!
     @IBOutlet var shortTermForecastLabel3: WKInterfaceLabel!
     @IBOutlet var longTermForecastTable: WKInterfaceTable!
+    @IBOutlet var shortTermForecastGroup: WKInterfaceGroup!
     
     lazy var dataSource: WeatherDataSource = {
         let defaultSystem = UserDefaults.standard.string(forKey: "MeasurementSystem") ?? "Metric"
@@ -46,6 +47,7 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         updatAllForecasts()
+        drawShortTermForecastGraph()
     }
     
     // Helper function to update all forecasts
@@ -53,6 +55,62 @@ class InterfaceController: WKInterfaceController {
         updateCurrentForecast()
         updateShortTermForecast()
         updateLongTermForecast()
+    }
+    
+    // Helper function to draw forecast graph
+    func drawShortTermForecastGraph() {
+        
+        //create an array of temperatures
+        let temperatures = dataSource.shortTermWeather.map {
+            CGFloat($0.temperature)
+        }
+        // boilerplate code to set up core graphics context
+        let graphWidth: CGFloat = 312
+        let graphHeight: CGFloat = 88
+        
+        // create an image context
+        UIGraphicsBeginImageContext(CGSize(width: graphWidth, height: graphHeight))
+        // get reference to context
+        let context = UIGraphicsGetCurrentContext()
+    
+        defer {
+            UIGraphicsEndImageContext()
+        }
+        
+        // draw in context
+        let path = UIBezierPath()
+        path.lineWidth = 4
+        UIColor.green.withAlphaComponent(0.9).setStroke()
+
+        // real line graph code starts here
+        guard let maxTemperature = temperatures.max(), let minTemperature = temperatures.min() else {
+          return
+        }
+        let temperatureSpread = maxTemperature - minTemperature
+
+        func xCoordinateForIndex(index: Int) -> CGFloat {
+          return graphWidth * CGFloat(index) / CGFloat(temperatures.count - 1)
+        }
+        func yCoordinateForTemperature(temperature: CGFloat) -> CGFloat {
+          return graphHeight - (graphHeight * (temperature - minTemperature) / temperatureSpread)
+        }
+
+        path.move(to: CGPoint(x: 0, y: yCoordinateForTemperature(temperature: temperatures[0])))
+
+        for (i, temperature) in temperatures.enumerated() {
+            let x: CGFloat = xCoordinateForIndex(index: i)
+            let y: CGFloat = yCoordinateForTemperature(temperature: temperature)
+            print("\(i) (\(x), \(y))")
+            path.addLine(to: CGPoint(x: x, y: y))
+        }
+        
+        path.stroke()
+        
+        // end drawing code
+        if let cgImage = context?.makeImage() {
+            let uiImage = UIImage(cgImage: cgImage)
+          shortTermForecastGroup.setBackgroundImage(uiImage)
+        }
     }
     
     // Updating the current forecast values
@@ -147,6 +205,7 @@ class InterfaceController: WKInterfaceController {
         showShortTermForecastForIndex(index: dataSource.shortTermWeather.count-1)
     }
     
+    // Modal Pages for weather details interface
     func showShortTermForecastForIndex(index: Int) {
         presentController(withNamesAndContexts: [(name: "WeatherDetailsInterface", context: ["dataSource": dataSource, "shortTermForecastIndex": 0, "active": index == 0]) as! (name: String, context: AnyObject),
                                                  (name: "WeatherDetailsInterface", context: ["dataSource": dataSource, "shortTermForecastIndex": dataSource.shortTermWeather.count/2, "active": index == dataSource.shortTermWeather.count/2]) as! (name: String, context: AnyObject),

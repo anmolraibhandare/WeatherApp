@@ -143,6 +143,7 @@
                         <outlet property="conditionsLabel" destination="QVW-mU-OEC" id="jCc-hd-GrD"/>
                         <outlet property="feelsLikeLabel" destination="VQL-O2-pxY" id="6tY-zt-1Be"/>
                         <outlet property="longTermForecastTable" destination="few-8w-hch" id="bTE-JO-vg4"/>
+                        <outlet property="shortTermForecastGroup" destination="whx-f9-u1Q" id="2vu-Kd-lNx"/>
                         <outlet property="shortTermForecastLabel1" destination="C3r-5V-3jm" id="m3B-QS-9jn"/>
                         <outlet property="shortTermForecastLabel2" destination="zfG-Ed-QpP" id="nDe-A8-vfO"/>
                         <outlet property="shortTermForecastLabel3" destination="4dp-9b-rOW" id="NhM-y5-Jhm"/>
