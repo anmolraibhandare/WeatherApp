@@ -115,6 +115,12 @@
                             </items>
                         </table>
                     </items>
+                    <menu key="menu" id="mAq-7Y-Qqj">
+                        <items>
+                            <menuItem title="Metric" image="units-metric" id="t6D-3j-P9U"/>
+                            <menuItem title="US Customary" image="units-uscustomary" id="iBg-aO-XyW"/>
+                        </items>
+                    </menu>
                     <connections>
                         <outlet property="conditionsImage" destination="tRm-s7-yEi" id="bYg-oL-SDi"/>
                         <outlet property="conditionsLabel" destination="QVW-mU-OEC" id="jCc-hd-GrD"/>
@@ -134,5 +140,7 @@
     <resources>
         <image name="Cloudy" width="26" height="26"/>
         <image name="Sunny" width="26" height="26"/>
+        <image name="units-metric" width="144" height="144"/>
+        <image name="units-uscustomary" width="144" height="144"/>
     </resources>
 </document>
