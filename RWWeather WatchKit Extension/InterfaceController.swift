@@ -55,8 +55,6 @@ class InterfaceController: WKInterfaceController {
         updateLongTermForecast()
     }
     
-
-    
     // Updating the current forecast values
     func updateCurrentForecast() {
         let weather = dataSource.currentWeather
@@ -135,6 +133,25 @@ class InterfaceController: WKInterfaceController {
         // Storing Data - when app opens it will be set to the value set previously
         UserDefaults.standard.set("USCustomary", forKey: "MeasurementSystem")
         UserDefaults.standard.synchronize()
+    }
+    
+    @IBAction func shortTermWeather1() {
+        showShortTermForecastForIndex(index: 0)
+    }
+    
+    @IBAction func shortTermWeather2() {
+        showShortTermForecastForIndex(index: dataSource.shortTermWeather.count/2)
+    }
+    
+    @IBAction func shortTermWeather3() {
+        showShortTermForecastForIndex(index: dataSource.shortTermWeather.count-1)
+    }
+    
+    func showShortTermForecastForIndex(index: Int) {
+        presentController(withNamesAndContexts: [(name: "WeatherDetailsInterface", context: ["dataSource": dataSource, "shortTermForecastIndex": 0, "active": index == 0]) as! (name: String, context: AnyObject),
+                                                 (name: "WeatherDetailsInterface", context: ["dataSource": dataSource, "shortTermForecastIndex": dataSource.shortTermWeather.count/2, "active": index == dataSource.shortTermWeather.count/2]) as! (name: String, context: AnyObject),
+                                                 (name: "WeatherDetailsInterface", context: ["dataSource": dataSource, "shortTermForecastIndex": dataSource.shortTermWeather.count-1, "active": index == dataSource.shortTermWeather.count-1]) as! (name: String, context: AnyObject)
+        ])
     }
     
     override func willActivate() {

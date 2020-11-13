@@ -53,6 +53,9 @@
                                             </label>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <action selector="shortTermWeather1" destination="AgC-eL-Hgc" id="0BE-AS-hZg"/>
+                                    </connections>
                                 </button>
                                 <button alignment="left" id="dSR-09-XUY">
                                     <group key="contentGroup" width="0.33300000000000002" alignment="left" id="MHY-eA-gGC">
@@ -63,6 +66,9 @@
                                             </label>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <action selector="shortTermWeather2" destination="AgC-eL-Hgc" id="4OD-CZ-zQj"/>
+                                    </connections>
                                 </button>
                                 <button alignment="left" id="o3N-cp-Lcz">
                                     <group key="contentGroup" width="0.33300000000000002" alignment="left" id="OhJ-IK-NVU">
@@ -73,6 +79,9 @@
                                             </label>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <action selector="shortTermWeather3" destination="AgC-eL-Hgc" id="cdU-5M-MSX"/>
+                                    </connections>
                                 </button>
                             </items>
                         </group>

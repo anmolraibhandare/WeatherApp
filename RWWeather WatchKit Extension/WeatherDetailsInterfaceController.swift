@@ -33,19 +33,30 @@ class WeatherDetailsInterfaceController: WKInterfaceController {
             return
         }
         
+        if let index = context["shortTermForecastIndex"] as? Int {
+          let weather = dataSource.shortTermWeather[index]
+            updateCurrentForecastForWeather(weather: weather)
+            if let active = context["active"] as? Bool, active {
+              becomeCurrentPage()
+            }
+        }
+        
         if let index = context["longTermForecastIndex"] as? Int {
             let weather = dataSource.longTermWeather[index]
             // Set up inteface
             setTitle(weather.intervalString)
-            
-            temperatureLabel.setText(weather.temperatureString)
-            conditionLabel.setText(weather.weatherConditionString)
-            conditionImage.setImageNamed(weather.weatherConditionImageName)
-            feelsLikeLabel.setText(weather.feelTemperatureString)
-            windLabel.setText(weather.windString)
-            highTemperatureLabel.setText(weather.highTemperatureString)
-            lowTemperatureLabel.setText(weather.lowTemperatureString)
+            updateCurrentForecastForWeather(weather: weather)
         }
+    }
+    
+    func updateCurrentForecastForWeather(weather: WeatherData) {
+        temperatureLabel.setText(weather.temperatureString)
+        conditionLabel.setText(weather.weatherConditionString)
+        conditionImage.setImageNamed(weather.weatherConditionImageName)
+        feelsLikeLabel.setText(weather.feelTemperatureString)
+        windLabel.setText(weather.windString)
+        highTemperatureLabel.setText(weather.highTemperatureString)
+        lowTemperatureLabel.setText(weather.lowTemperatureString)
     }
 
     override func willActivate() {
