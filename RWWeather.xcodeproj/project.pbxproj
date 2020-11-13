@@ -10,6 +10,7 @@
 		260BA5EA255ED8D500C75691 /* LongTermForecastRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260BA5E9255ED8D500C75691 /* LongTermForecastRowController.swift */; };
 		260BA5EC255EE1B200C75691 /* WeatherDetailsInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260BA5EB255EE1B200C75691 /* WeatherDetailsInterfaceController.swift */; };
 		2683A344255F19300084EAE2 /* AlertNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2683A343255F19300084EAE2 /* AlertNotificationController.swift */; };
+		2683A346255F1B120084EAE2 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2683A345255F1B120084EAE2 /* ComplicationController.swift */; };
 		784314C01C1DE25200F006A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784314BF1C1DE25200F006A0 /* AppDelegate.swift */; };
 		784314C21C1DE25200F006A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784314C11C1DE25200F006A0 /* ViewController.swift */; };
 		784314C51C1DE25200F006A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 784314C31C1DE25200F006A0 /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		260BA5EB255EE1B200C75691 /* WeatherDetailsInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsInterfaceController.swift; sourceTree = "<group>"; };
 		2683A342255F18140084EAE2 /* TestNotification.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestNotification.apns; sourceTree = "<group>"; };
 		2683A343255F19300084EAE2 /* AlertNotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertNotificationController.swift; sourceTree = "<group>"; };
+		2683A345255F1B120084EAE2 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		784314BC1C1DE25200F006A0 /* RWWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RWWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		784314BF1C1DE25200F006A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		784314C11C1DE25200F006A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -161,10 +163,11 @@
 				260BA5EB255EE1B200C75691 /* WeatherDetailsInterfaceController.swift */,
 				260BA5E9255ED8D500C75691 /* LongTermForecastRowController.swift */,
 				784314E41C1DE25200F006A0 /* ExtensionDelegate.swift */,
-				784314E61C1DE25200F006A0 /* Assets.xcassets */,
-				784314E81C1DE25200F006A0 /* Info.plist */,
 				2683A342255F18140084EAE2 /* TestNotification.apns */,
 				2683A343255F19300084EAE2 /* AlertNotificationController.swift */,
+				2683A345255F1B120084EAE2 /* ComplicationController.swift */,
+				784314E61C1DE25200F006A0 /* Assets.xcassets */,
+				784314E81C1DE25200F006A0 /* Info.plist */,
 			);
 			path = "RWWeather WatchKit Extension";
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				260BA5EC255EE1B200C75691 /* WeatherDetailsInterfaceController.swift in Sources */,
 				260BA5EA255ED8D500C75691 /* LongTermForecastRowController.swift in Sources */,
 				2683A344255F19300084EAE2 /* AlertNotificationController.swift in Sources */,
+				2683A346255F1B120084EAE2 /* ComplicationController.swift in Sources */,
 				784314E31C1DE25200F006A0 /* InterfaceController.swift in Sources */,
 				784314F81C1DE40700F006A0 /* WeatherDataSource.swift in Sources */,
 			);
