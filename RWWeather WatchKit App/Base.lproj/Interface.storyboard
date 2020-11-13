@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
-    <device id="watch38" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="16097.2" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
     <dependencies>
         <deployment identifier="watchOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="16012"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
@@ -32,13 +30,21 @@
                             </items>
                         </group>
                         <imageView alignment="center" image="Cloudy" id="tRm-s7-yEi"/>
+                        <label alignment="center" text="Cloudy" id="QVW-mU-OEC"/>
                     </items>
                     <connections>
                         <outlet property="conditionsImage" destination="tRm-s7-yEi" id="bYg-oL-SDi"/>
+                        <outlet property="conditionsLabel" destination="QVW-mU-OEC" id="jCc-hd-GrD"/>
+                        <outlet property="feelsLikeLabel" destination="VQL-O2-pxY" id="6tY-zt-1Be"/>
+                        <outlet property="temperatureLabel" destination="RaI-MH-eRu" id="B6T-bt-ZQ8"/>
                         <outlet property="windSpeedLabel" destination="x6g-dZ-FDX" id="uso-UL-RBL"/>
                     </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="118" y="109"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Cloudy" width="29" height="29"/>
+    </resources>
 </document>

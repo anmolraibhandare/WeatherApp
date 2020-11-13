@@ -27,12 +27,24 @@ class InterfaceController: WKInterfaceController {
 
     @IBOutlet var conditionsImage: WKInterfaceImage!
     @IBOutlet var windSpeedLabel: WKInterfaceLabel!
+    @IBOutlet var temperatureLabel: WKInterfaceLabel!
+    @IBOutlet var feelsLikeLabel: WKInterfaceLabel!
+    @IBOutlet var conditionsLabel: WKInterfaceLabel!
+    
+    var dataSource = WeatherDataSource(measurementSystem: .Metric)
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        windSpeedLabel.setText("Hello weather!")
-        conditionsImage.setImageNamed("Sunny")
+        updateCurrentForecast()
+    }
+    
+    func updateCurrentForecast() {
+        let weather = dataSource.currentWeather
+        temperatureLabel.setText(weather.temperatureString)
+        feelsLikeLabel.setText(weather.feelTemperatureString)
+        windSpeedLabel.setText(weather.windString)
+        conditionsLabel.setText(weather.weatherConditionString)
+        conditionsImage.setImageNamed(weather.weatherConditionImageName)
     }
 
   override func willActivate() {
@@ -44,5 +56,5 @@ class InterfaceController: WKInterfaceController {
     // This method is called when watch view controller is no longer visible
     super.didDeactivate()
   }
-
+    
 }
