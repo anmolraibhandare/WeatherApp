@@ -24,7 +24,17 @@ class WeatherDetailsInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
-        // Configure interface objects here.
+        // Receive Context
+        // Checking the context if received from InterfaceController
+        guard let context = context as? NSDictionary, let dataSource = context["dataSource"] as? WeatherDataSource else {
+            return
+        }
+        
+        if let index = context["longTermForecastIndex"] as? Int {
+            let weather = dataSource.longTermWeather[index]
+            // Set up inteface
+            setTitle(weather.intervalString)
+        }
     }
 
     override func willActivate() {

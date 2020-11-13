@@ -97,6 +97,21 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
+    // Send the context information along the segue
+    override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
+        if segueIdentifier == "WeatherDetailsSegue" {
+            let context: NSDictionary = [
+                // dataSource is a class and can be sent
+                "dataSource": dataSource,
+                "longTermForecastIndex": rowIndex
+            ]
+            return context // Context sent to segue
+        }
+        return nil
+    }
+    
+    
+    
     // Metric Menu Action
     @IBAction func switchToMetric() {
         dataSource = WeatherDataSource(measurementSystem: .Metric)
