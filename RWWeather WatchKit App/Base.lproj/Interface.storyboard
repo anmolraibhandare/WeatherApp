@@ -81,7 +81,7 @@
                         </separator>
                         <table alignment="left" id="few-8w-hch">
                             <items>
-                                <tableRow identifier="longTermForecastRow" id="f0g-Xs-MgZ">
+                                <tableRow identifier="longTermForecastRow" id="f0g-Xs-MgZ" customClass="LongTermForecastRowController" customModule="RWWeather_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" id="E3l-Ln-Trl">
                                         <items>
                                             <group width="1" widthAdjustment="-31" alignment="left" layout="vertical" spacing="2" id="AiZ-2H-w9b">
@@ -104,6 +104,12 @@
                                             <imageView alignment="right" verticalAlignment="center" image="Sunny" id="GMT-uA-cLD"/>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <outlet property="conditionsImage" destination="GMT-uA-cLD" id="gwQ-fM-kG6"/>
+                                        <outlet property="conditionsLabel" destination="FNx-C3-Gy2" id="6bF-f1-OBb"/>
+                                        <outlet property="dateLabel" destination="108-eX-2cJ" id="e5L-25-n1z"/>
+                                        <outlet property="temperatureLabel" destination="nu5-u5-aG5" id="X66-8h-k5i"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>

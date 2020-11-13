@@ -69,6 +69,12 @@ class InterfaceController: WKInterfaceController {
     
     func updateLongTermForecast(){
         longTermForecastTable.setNumberOfRows(dataSource.longTermWeather.count, withRowType: "longTermForecastRow")
+        
+        for (index, weather) in dataSource.longTermWeather.enumerated(){
+            if let row = longTermForecastTable.rowController(at: index) as? LongTermForecastRowController {
+                row.conditionsLabel.setText("")
+            }
+        }
     }
 
   override func willActivate() {
