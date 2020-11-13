@@ -35,19 +35,29 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var shortTermForecastLabel3: WKInterfaceLabel!
     @IBOutlet var longTermForecastTable: WKInterfaceTable!
     
-    var dataSource = WeatherDataSource(measurementSystem: .Metric)
+    lazy var dataSource: WeatherDataSource = {
+        let defaultSystem = UserDefaults.standard.string(forKey: "MeasurementSystem") ?? "Metric"
+        if defaultSystem == "Metric" {
+            return WeatherDataSource(measurementSystem: .Metric)
+        }
+        return WeatherDataSource(measurementSystem: .USCustomary)
+    }()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        updatAllForecast()
+        updatAllForecasts()
     }
     
+    // Helper function to update all forecasts
     func updatAllForecasts() {
         updateCurrentForecast()
         updateShortTermForecast()
         updateLongTermForecast()
     }
     
+
+    
+    // Updating the current forecast values
     func updateCurrentForecast() {
         let weather = dataSource.currentWeather
         temperatureLabel.setText(weather.temperatureString)
@@ -57,6 +67,7 @@ class InterfaceController: WKInterfaceController {
         conditionsImage.setImageNamed(weather.weatherConditionImageName)
     }
     
+    // Updating the short term forecast
     func updateShortTermForecast() {
         let labels = [shortTermForecastLabel1, shortTermForecastLabel2,
         shortTermForecastLabel3]
@@ -71,6 +82,7 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
+    // Updating the long term table forecast
     func updateLongTermForecast(){
         longTermForecastTable.setNumberOfRows(dataSource.longTermWeather.count, withRowType: "longTermForecastRow")
         
@@ -84,14 +96,23 @@ class InterfaceController: WKInterfaceController {
             }
         }
     }
+    
+    // Metric Menu Action
     @IBAction func switchToMetric() {
         dataSource = WeatherDataSource(measurementSystem: .Metric)
         updatAllForecasts()
+        // Storing Data - when app opens it will be set to the value set previously
+        UserDefaults.standard.set("Metric", forKey: "MeasurementSystem")
+        UserDefaults.standard.synchronize()
     }
     
+    // Customary Menu Action
     @IBAction func switchToUSCustomary() {
         dataSource = WeatherDataSource(measurementSystem: .USCustomary)
         updatAllForecasts()
+        // Storing Data - when app opens it will be set to the value set previously
+        UserDefaults.standard.set("USCustomary", forKey: "MeasurementSystem")
+        UserDefaults.standard.synchronize()
     }
     
     override func willActivate() {
