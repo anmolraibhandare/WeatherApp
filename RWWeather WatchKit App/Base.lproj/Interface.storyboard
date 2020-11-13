@@ -12,10 +12,16 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="RWWeather_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <group width="1" alignment="left" id="4gj-jd-A9Q">
+                        <group width="1" alignment="left" spacing="4" id="4gj-jd-A9Q">
                             <items>
                                 <label alignment="center" verticalAlignment="center" text="70°" id="RaI-MH-eRu">
-                                    <fontDescription key="font" type="system" weight="medium" pointSize="28"/>
+                                    <fontDescription key="font" type="system" pointSize="28"/>
+                                    <variation key="device=watch42mm">
+                                        <fontDescription key="font" type="system" weight="medium" pointSize="34"/>
+                                    </variation>
+                                    <variation key="device=watch44mm">
+                                        <fontDescription key="font" type="system" pointSize="34"/>
+                                    </variation>
                                 </label>
                                 <group alignment="center" layout="vertical" id="fRC-Pi-z2K">
                                     <items>
@@ -28,14 +34,59 @@
                                     </items>
                                 </group>
                             </items>
+                            <variation key="device=watch42mm" spacing="10"/>
+                            <variation key="device=watch44mm" spacing="20"/>
                         </group>
                         <imageView alignment="center" image="Cloudy" id="tRm-s7-yEi"/>
                         <label alignment="center" text="Cloudy" id="QVW-mU-OEC"/>
+                        <separator alignment="left" id="U6f-Qz-lM7">
+                            <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </separator>
+                        <group width="1" alignment="left" id="whx-f9-u1Q">
+                            <items>
+                                <button alignment="left" id="hpe-hq-zbB">
+                                    <group key="contentGroup" width="0.33300000000000002" alignment="left" id="X9s-2W-bac">
+                                        <items>
+                                            <label alignment="center" textAlignment="center" numberOfLines="2" id="C3r-5V-3jm">
+                                                <string key="text">1PM
+70°</string>
+                                            </label>
+                                        </items>
+                                    </group>
+                                </button>
+                                <button alignment="left" id="dSR-09-XUY">
+                                    <group key="contentGroup" width="0.33300000000000002" alignment="left" id="MHY-eA-gGC">
+                                        <items>
+                                            <label alignment="center" textAlignment="center" numberOfLines="2" id="zfG-Ed-QpP">
+                                                <string key="text">1PM
+70°</string>
+                                            </label>
+                                        </items>
+                                    </group>
+                                </button>
+                                <button alignment="left" id="o3N-cp-Lcz">
+                                    <group key="contentGroup" width="0.33300000000000002" alignment="left" id="OhJ-IK-NVU">
+                                        <items>
+                                            <label alignment="center" textAlignment="center" numberOfLines="2" id="4dp-9b-rOW">
+                                                <string key="text">1PM
+70°</string>
+                                            </label>
+                                        </items>
+                                    </group>
+                                </button>
+                            </items>
+                        </group>
+                        <separator alignment="left" id="j2K-3I-a0c">
+                            <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </separator>
                     </items>
                     <connections>
                         <outlet property="conditionsImage" destination="tRm-s7-yEi" id="bYg-oL-SDi"/>
                         <outlet property="conditionsLabel" destination="QVW-mU-OEC" id="jCc-hd-GrD"/>
                         <outlet property="feelsLikeLabel" destination="VQL-O2-pxY" id="6tY-zt-1Be"/>
+                        <outlet property="shortTermForecastLabel1" destination="C3r-5V-3jm" id="m3B-QS-9jn"/>
+                        <outlet property="shortTermForecastLabel2" destination="zfG-Ed-QpP" id="nDe-A8-vfO"/>
+                        <outlet property="shortTermForecastLabel3" destination="4dp-9b-rOW" id="NhM-y5-Jhm"/>
                         <outlet property="temperatureLabel" destination="RaI-MH-eRu" id="B6T-bt-ZQ8"/>
                         <outlet property="windSpeedLabel" destination="x6g-dZ-FDX" id="uso-UL-RBL"/>
                     </connections>
@@ -45,6 +96,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Cloudy" width="29" height="29"/>
+        <image name="Cloudy" width="26" height="26"/>
     </resources>
 </document>

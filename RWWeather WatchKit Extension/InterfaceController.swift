@@ -30,12 +30,16 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var temperatureLabel: WKInterfaceLabel!
     @IBOutlet var feelsLikeLabel: WKInterfaceLabel!
     @IBOutlet var conditionsLabel: WKInterfaceLabel!
+    @IBOutlet var shortTermForecastLabel1: WKInterfaceLabel!
+    @IBOutlet var shortTermForecastLabel2: WKInterfaceLabel!
+    @IBOutlet var shortTermForecastLabel3: WKInterfaceLabel!
     
     var dataSource = WeatherDataSource(measurementSystem: .Metric)
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         updateCurrentForecast()
+        updateShortTermForecast()
     }
     
     func updateCurrentForecast() {
@@ -45,6 +49,20 @@ class InterfaceController: WKInterfaceController {
         windSpeedLabel.setText(weather.windString)
         conditionsLabel.setText(weather.weatherConditionString)
         conditionsImage.setImageNamed(weather.weatherConditionImageName)
+    }
+    
+    func updateShortTermForecast() {
+        let labels = [shortTermForecastLabel1, shortTermForecastLabel2,
+        shortTermForecastLabel3]
+        let weatherData = [dataSource.shortTermWeather[0],
+        dataSource.shortTermWeather[dataSource.shortTermWeather.count/2],
+        dataSource.shortTermWeather[dataSource.shortTermWeather.count-1]]
+        for i in 0...2 {
+            let label = labels[i]
+            let weather = weatherData[i]
+            label?.setText("\(weather.intervalString)\n" +
+            "\(weather.temperatureString)")
+        }
     }
 
   override func willActivate() {
